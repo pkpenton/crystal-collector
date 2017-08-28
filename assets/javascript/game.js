@@ -14,7 +14,7 @@ var crystalImages = [
     "assets/images/crystal_08.png",
 ];
 
-var targetNumber = Math.floor(Math.random() * (65 - 13) + 10);
+var targetNumber = Math.floor(Math.random() * (65 - 13) + 13);
 $("#number-to-guess").text(targetNumber);
 
 $("#wins").text(wins);
@@ -57,6 +57,7 @@ function playGame() {
             wins ++;
             $("#wins").text(wins);
 
+            $("#number-to-guess").attr("style", "color: aqua;");
             $("#crystals").attr("style", "display: none;");
             $("#you-win").attr("style", "display: block;");
             $("#play-again").attr("style", "display: block;");
@@ -84,6 +85,7 @@ function playAgain() {
     targetNumber = Math.floor(Math.random() * (65 - 10) + 10);
     $("#number-to-guess").text(targetNumber);
 
+    $("#number-to-guess").attr("style", "color: black;");
     $("#you-win").attr("style", "display: none;");
     $("#you-lose").attr("style", "display: none;");
     $("#play-again").attr("style", "display: none;");

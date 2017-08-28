@@ -2,6 +2,10 @@ h2 {
     font-size: 26px;
 }
 
+.animated {
+    animation-duration: 2s;
+}
+
 .crystal-image {
     width: 150px;
 }
@@ -13,10 +17,12 @@ h2 {
 
 #you-win {
     display: none;
+    color: magenta;
 }
 
 #you-lose {
     display: none;
+    color: red;
 }
 
 #play-again {
@@ -45,24 +51,26 @@ button {
     background-color: #ddd1e7;
     padding-top: 30px;
     padding-bottom: 30px;
-    animation: colorchange 50s;
-    -webkit-animation: colorchange 50s;
+    animation: colorchange 70s;
+    -webkit-animation: colorchange 70s;
 }
 
 @keyframes colorchange
 {
-    0%   {background: #ddd1e7;}
-    25%  {background: #cce5e5;}
-    50%  {background: #ccccff;}
-    75%  {background: #fff2f4;}
+    0%   {background: #ffe5ff;}
+    20%  {background: #ffedcc;}
+    40%  {background: #ffffb2;}
+    60%  {background: #ccffff;}
+    80%  {background: #ccccff;}
     100% {background: #ddd1e7;}
 }
 
 @-webkit-keyframes colorchange
 {
-    0%   {background: #ddd1e7;}
-    25%  {background: #cce5e5;}
-    50%  {background: #ccccff;}
-    75%  {background: #fff2f4;}
+    0%   {background: #ffe5ff;}
+    20%  {background: #ffedcc;}
+    40%  {background: #ffffb2;}
+    60%  {background: #ccffff;}
+    80%  {background: #ccccff;}
     100% {background: #ddd1e7;}
 }
