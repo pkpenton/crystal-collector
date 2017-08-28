@@ -13,62 +13,79 @@
     </head>
 
     <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Crystal Collector</h1>
+                <p class="lead">
+                    Fill your bag with crystals, but be careful not to overflow it.
+                </p>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row">
-                <h1>Crystal Collector</h1>
-                <p>
-                    You will be given a random number at the start of each game.
-                </p>
+                <div class="col-xs-4">
+                    <h2>How to play:</h2>
+                    <p>
+                        You will be given an exact number of crystals to
+                        collect at the start of each game.
+                    </p>
 
-                <p>
-                    There are four crystals below. By clicking a crystal, you will
-                    add a specific amount of points to your total score.
-                </p>
+                    <p>
+                        Add crystals to your bag by clicking a crystal.
+                    </p>
 
-                <p>
-                    You win the game by matching your total score with the random
-                    number. You lose the game if your total score goes above the
-                    random number.
-                </p>
+                    <p>
+                        The value of each crystal is hidden from you until you click on it.
+                    </p>
 
-                <p>
-                    The value of each crystal is hidden from you until you click on it.
-                </p>
+                    <p>
+                        Each time the game starts, the value of each crystal will change.
+                    </p>
 
-                <p>
-                    Each time the game starts, the value of each crystal will change.
-                </p>
+                    <p>
+                        You win the game by collecting the exact number of crystals
+                        indicated. You lose the game if your total score goes above
+                        the number indicated.
+                    </p>
+                </div>
+
+                <div class="col-xs-4">
+                    <div id="crystals"></div>
+
+                    <h1 id="you-win" class="center-align">You win!</h1>
+                    <h1 id="you-lose" class="center-align">You lose!</h1>
+                    <button id="play-again">Play Again</button>
+                </div>
+
+                <div class="col-xs-4 center-align">
+                    <div class="row">
+                        <h2>Crystals needed to win:</h2>
+
+                        <h1 class="number"><span id="number-to-guess"></span></h1>
+
+                        <h2 class="crystal-bag-header">Crystals in your bag:</h2>
+
+                        <h1 class="number"><span id="current-score"></span></h1>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2 class="wins-losses">
+                                Wins: <span id="wins"></span>
+                            </h2>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <h2 class="wins-losses">
+                                Losses: <span id="losses"></span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="row">
-                <h2>
-                    Number of crystals to win: <span id="number-to-guess"></span>
-                </h2>
-            </div>
-
-            <div class="row">
-                <div id="crystals"></div>
-            </div>
-
-            <div class="row">
-                <h2>Number of crystals in your bag: <span id="current-score"></span>
-            </div>
-
-            <div class="row">
-                <p>
-                    Wins: <span id="wins"></span>
-                </p>
-
-                <p>
-                    Losses: <span id="losses"></span>
-                </p>
-
-                <h1 id="you-win"></h1>
-                <h1 id="you-lose"></h1>
-                <button id="play-again">Play Again</button>
-            </div>
-
-            <script type="text/javascript" src="assets/javascript/game.js"></script>
         </div>
+
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
     </body>
 </html>

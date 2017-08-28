@@ -1,5 +1,14 @@
+h2 {
+    font-size: 26px;
+}
+
 .crystal-image {
     width: 150px;
+}
+
+#crystals {
+    padding-top: 15px;
+    padding-left: 30px;
 }
 
 #you-win {
@@ -12,4 +21,48 @@
 
 #play-again {
     display: none;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.crystal-bag-header {
+    margin-top: 30px;
+}
+
+.number {
+    font-size: 42px;
+    margin-top: 0;
+}
+
+button {
+    width: 90px;
+    margin: auto;
+}
+
+.jumbotron {
+    background-color: #ddd1e7;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    animation: colorchange 50s;
+    -webkit-animation: colorchange 50s;
+}
+
+@keyframes colorchange
+{
+    0%   {background: #ddd1e7;}
+    25%  {background: #cce5e5;}
+    50%  {background: #ccccff;}
+    75%  {background: #fff2f4;}
+    100% {background: #ddd1e7;}
+}
+
+@-webkit-keyframes colorchange
+{
+    0%   {background: #ddd1e7;}
+    25%  {background: #cce5e5;}
+    50%  {background: #ccccff;}
+    75%  {background: #fff2f4;}
+    100% {background: #ddd1e7;}
 }

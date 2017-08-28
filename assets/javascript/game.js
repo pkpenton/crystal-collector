@@ -14,7 +14,7 @@ var crystalImages = [
     "assets/images/crystal_08.png",
 ];
 
-var targetNumber = Math.floor(Math.random() * (65 - 10) + 10);
+var targetNumber = Math.floor(Math.random() * (65 - 13) + 10);
 $("#number-to-guess").text(targetNumber);
 
 $("#wins").text(wins);
@@ -51,14 +51,14 @@ function playGame() {
         crystalCounter += crystalValue;
 
         $("#current-score").text(crystalCounter);
+        $("#current-score").attr("style", "color: aqua;");
 
         if (crystalCounter === targetNumber) {
             wins ++;
             $("#wins").text(wins);
 
+            $("#crystals").attr("style", "display: none;");
             $("#you-win").attr("style", "display: block;");
-            $("#you-win").text("You win!");
-
             $("#play-again").attr("style", "display: block;");
         }
 
@@ -66,9 +66,8 @@ function playGame() {
             losses ++;
             $("#losses").text(losses);
 
+            $("#crystals").attr("style", "display: none;");
             $("#you-lose").attr("style", "display: block;");
-            $("#you-lose").text("You Lose!");
-
             $("#play-again").attr("style", "display: block;");
         };
     });
@@ -88,6 +87,8 @@ function playAgain() {
     $("#you-win").attr("style", "display: none;");
     $("#you-lose").attr("style", "display: none;");
     $("#play-again").attr("style", "display: none;");
+    $("#crystals").attr("style", "display: block;");
+    $("#current-score").attr("style", "color: black;");
 
     randomizedCrystalValues = shuffleArray(staticCrystalValues);
     randomizedCrystalImages = shuffleArray(crystalImages);
