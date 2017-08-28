@@ -2,10 +2,6 @@ h2 {
     font-size: 26px;
 }
 
-.animated {
-    animation-duration: 2s;
-}
-
 .crystal-image {
     width: 150px;
 }
@@ -18,11 +14,13 @@ h2 {
 #you-win {
     display: none;
     color: magenta;
+    animation-duration: 3s;
 }
 
 #you-lose {
     display: none;
     color: red;
+    animation-duration: 3s;
 }
 
 #play-again {
@@ -48,11 +46,10 @@ button {
 }
 
 .jumbotron {
-    background-color: #ddd1e7;
     padding-top: 30px;
     padding-bottom: 30px;
-    animation: colorchange 70s;
-    -webkit-animation: colorchange 70s;
+    animation: colorchange 10s;
+    -webkit-animation: colorchange 10s;
 }
 
 @keyframes colorchange
@@ -62,7 +59,7 @@ button {
     40%  {background: #ffffb2;}
     60%  {background: #ccffff;}
     80%  {background: #ccccff;}
-    100% {background: #ddd1e7;}
+    100% {background: #ffe5ff;}
 }
 
 @-webkit-keyframes colorchange
@@ -72,5 +69,5 @@ button {
     40%  {background: #ffffb2;}
     60%  {background: #ccffff;}
     80%  {background: #ccccff;}
-    100% {background: #ddd1e7;}
+    100% {background: #ffe5ff;}
 }
