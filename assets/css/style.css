@@ -1,3 +1,15 @@
 .crystal-image {
     width: 150px;
 }
+
+#you-win {
+    display: none;
+}
+
+#you-lose {
+    display: none;
+}
+
+#play-again {
+    display: none;
+}

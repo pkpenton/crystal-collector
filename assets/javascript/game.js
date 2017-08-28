@@ -19,6 +19,7 @@ $("#number-to-guess").text(targetNumber);
 
 $("#wins").text(wins);
 $("#losses").text(losses);
+$("#current-score").text(crystalCounter);
 
 function shuffleArray(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -49,30 +50,48 @@ function playGame() {
         crystalValue = parseInt(crystalValue);
         crystalCounter += crystalValue;
 
-        alert("New score: " + crystalCounter);
+        $("#current-score").text(crystalCounter);
 
         if (crystalCounter === targetNumber) {
-            alert("You win!");
             wins ++;
             $("#wins").text(wins);
-            playAgain();
+
+            $("#you-win").attr("style", "display: block;");
+            $("#you-win").text("You win!");
+
+            $("#play-again").attr("style", "display: block;");
         }
 
         else if (crystalCounter > targetNumber) {
-            alert("You lose!");
             losses ++;
             $("#losses").text(losses);
-            playAgain();
+
+            $("#you-lose").attr("style", "display: block;");
+            $("#you-lose").text("You Lose!");
+
+            $("#play-again").attr("style", "display: block;");
         };
     });
 };
 
+$("#play-again").on("click", function() {
+    playAgain();
+});
+
 function playAgain() {
     crystalCounter = 0;
+    $("#current-score").text(crystalCounter);
+
     targetNumber = Math.floor(Math.random() * (65 - 10) + 10);
     $("#number-to-guess").text(targetNumber);
+
+    $("#you-win").attr("style", "display: none;");
+    $("#you-lose").attr("style", "display: none;");
+    $("#play-again").attr("style", "display: none;");
+
     randomizedCrystalValues = shuffleArray(staticCrystalValues);
     randomizedCrystalImages = shuffleArray(crystalImages);
+
     $(".crystal-image").replaceWith("");
     for (var i = 0; i < 4; i++) {
         var imageCrystal = $("<img>");
@@ -81,6 +100,7 @@ function playAgain() {
         imageCrystal.attr("crystal-value", randomizedCrystalValues[i]);
         $("#crystals").append(imageCrystal);
     };
+
     playGame();
 };
 
