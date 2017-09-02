@@ -1,9 +1,9 @@
 var crystalCounter = 0;
 var wins = 0;
 var losses = 0;
-var staticCrystalValues = [10, 5, 3, 7];
+var staticCrystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-var crystalImages = [
+var staticCrystalImages = [
     "assets/images/crystal_01.png",
     "assets/images/crystal_02.png",
     "assets/images/crystal_03.png",
@@ -14,7 +14,7 @@ var crystalImages = [
     "assets/images/crystal_08.png",
 ];
 
-var targetNumber = Math.floor(Math.random() * (65 - 13) + 13);
+var targetNumber = Math.floor(Math.random() * (120 - 19) + 19);
 $("#number-to-guess").text(targetNumber);
 
 $("#wins").text(wins);
@@ -34,7 +34,7 @@ function shuffleArray(array) {
 };
 
 var randomizedCrystalValues = shuffleArray(staticCrystalValues);
-var randomizedCrystalImages = shuffleArray(crystalImages);
+var randomizedCrystalImages = shuffleArray(staticCrystalImages);
 
 for (var i = 0; i < 4; i++) {
     var imageCrystal = $("<img>");
@@ -82,7 +82,7 @@ function playAgain() {
     crystalCounter = 0;
     $("#current-score").text(crystalCounter);
 
-    targetNumber = Math.floor(Math.random() * (65 - 10) + 10);
+    targetNumber = Math.floor(Math.random() * (120 - 19) + 19);
     $("#number-to-guess").text(targetNumber);
 
     $("#number-to-guess").attr("style", "color: black;");
@@ -93,7 +93,7 @@ function playAgain() {
     $("#current-score").attr("style", "color: black;");
 
     randomizedCrystalValues = shuffleArray(staticCrystalValues);
-    randomizedCrystalImages = shuffleArray(crystalImages);
+    randomizedCrystalImages = shuffleArray(staticCrystalImages);
 
     $(".crystal-image").replaceWith("");
     for (var i = 0; i < 4; i++) {
